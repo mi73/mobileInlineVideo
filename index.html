@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <style>
+        @media (max-width:800px) {
+            div, iframe {
+                width: 100%;
+                width: 100vw;
+                height: 56.25vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mobile autoplay test</h1>
+
+    <h2>just iframe youtube / muted</h2>
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+            src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&mute=1&origin=http://example.com"
+            frameborder="0"></iframe>
+
+    <h2>just iframe youtube / muted playsinline</h2>
+    <iframe id="ytplayer2" type="text/html" width="640" height="360"
+            src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&mute=1&playsinline=1&origin=http://example.com"
+            frameborder="0"></iframe>
+
+    <h2>just iframe youtube / muted playsinline loop</h2>
+    <iframe id="ytplayer3" type="text/html" width="640" height="360"
+            src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&mute=1&playsinline=1&loop=1&origin=http://example.com"
+            frameborder="0"></iframe>
+
+    <h2>iframeAPI youtube / muted</h2>
+    <div id="ytplayer4"></div>
+
+    <h2>iframeAPI youtube / muted playsinline</h2>
+    <div id="ytplayer5"></div>
+
+    <h2>iframeAPI youtube / muted playsinline loop</h2>
+    <div id="ytplayer6"></div>
+
+    <h2>html5 video tag / muted</h2>
+    <video src="./sample.mp4" autoplay muted></video>
+
+    <h2>html5 video tag / muted playsinline</h2>
+    <video src="./sample.mp4" autoplay muted playsinline></video>
+
+    <h2>html5 video tag / muted playsinline loop</h2>
+    <video src="./sample.mp4" autoplay muted playsinline loop></video>
+
+    <script>
+      // Load the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Replace the 'ytplayer' element with an <iframe> and
+      // YouTube player after the API code downloads.
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer4', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+          },
+        });
+
+        player = new YT.Player('ytplayer5', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+            playsinline: 1,
+          },
+        });
+
+        player = new YT.Player('ytplayer6', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+            playsinline: 1,
+            loop: 1,
+          },
+        });
+      }
+    </script>
+</body>
+</html>
