@@ -60,9 +60,8 @@
 
       // Replace the 'ytplayer' element with an <iframe> and
       // YouTube player after the API code downloads.
-      var player;
       function onYouTubePlayerAPIReady() {
-        player = new YT.Player('ytplayer4', {
+        const player1 = new YT.Player('ytplayer4', {
           height: '360',
           width: '640',
           videoId: 'M7lc1UVf-VE',
@@ -70,9 +69,15 @@
             mute: 1,
             autoplay: 1,
           },
+          events: {
+            onReady: () => {
+              player1.mute();
+              player1.playVideo();
+            },
+          },
         });
 
-        player = new YT.Player('ytplayer5', {
+        const player2 = new YT.Player('ytplayer5', {
           height: '360',
           width: '640',
           videoId: 'M7lc1UVf-VE',
@@ -81,9 +86,15 @@
             autoplay: 1,
             playsinline: 1,
           },
+          events: {
+            onReady: () => {
+              player2.mute();
+              player2.playVideo();
+            },
+          },
         });
 
-        player = new YT.Player('ytplayer6', {
+        const player3 = new YT.Player('ytplayer6', {
           height: '360',
           width: '640',
           videoId: 'M7lc1UVf-VE',
@@ -92,6 +103,12 @@
             autoplay: 1,
             playsinline: 1,
             loop: 1,
+          },
+          events: {
+            onReady: () => {
+              player3.mute();
+              player3.playVideo();
+            },
           },
         });
       }
