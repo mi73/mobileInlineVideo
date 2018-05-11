@@ -33,14 +33,14 @@
     <!--src="//www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&mute=1&playsinline=1&loop=1&origin=https://mi73.github.io"-->
     <!--frameborder="0"></iframe>-->
 
-    <!--<h2>iframeAPI youtube / muted</h2>-->
-    <!--<div id="ytplayer4"></div>-->
+    <h2>iframeAPI youtube / muted</h2>
+    <div id="ytplayer4"></div>
 
-    <!--<h2>iframeAPI youtube / muted playsinline</h2>-->
-    <!--<div id="ytplayer5"></div>-->
+    <h2>iframeAPI youtube / muted playsinline</h2>
+    <div id="ytplayer5"></div>
 
-    <!--<h2>iframeAPI youtube / muted playsinline loop</h2>-->
-    <!--<div id="ytplayer6"></div>-->
+    <h2>iframeAPI youtube / muted playsinline loop</h2>
+    <div id="ytplayer6"></div>
 
     <h2>html5 video tag / muted</h2>
     <video src="./sample.mp4" autoplay muted></video>
@@ -60,41 +60,41 @@
 
       // Replace the 'ytplayer' element with an <iframe> and
       // YouTube player after the API code downloads.
-      // var player;
-      // function onYouTubePlayerAPIReady() {
-      //   player = new YT.Player('ytplayer4', {
-      //     height: '360',
-      //     width: '640',
-      //     videoId: 'M7lc1UVf-VE',
-      //     playerVars: {
-      //       mute: 1,
-      //       autoplay: 1,
-      //     },
-      //   });
-      //
-      //   player = new YT.Player('ytplayer5', {
-      //     height: '360',
-      //     width: '640',
-      //     videoId: 'M7lc1UVf-VE',
-      //     playerVars: {
-      //       mute: 1,
-      //       autoplay: 1,
-      //       playsinline: 1,
-      //     },
-      //   });
-      //
-      //   player = new YT.Player('ytplayer6', {
-      //     height: '360',
-      //     width: '640',
-      //     videoId: 'M7lc1UVf-VE',
-      //     playerVars: {
-      //       mute: 1,
-      //       autoplay: 1,
-      //       playsinline: 1,
-      //       loop: 1,
-      //     },
-      //   });
-      // }
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer4', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+          },
+        });
+
+        player = new YT.Player('ytplayer5', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+            playsinline: 1,
+          },
+        });
+
+        player = new YT.Player('ytplayer6', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            mute: 1,
+            autoplay: 1,
+            playsinline: 1,
+            loop: 1,
+          },
+        });
+      }
     </script>
 </body>
 </html>
