@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+
+  <h1>Mobile Date test</h1>
+
+  <div class='d1'></div>
+  <div class='d2'</div>
+  <script>
+    var now = new Date();
+    var date1 = document.querySelector('.d1');
+    var date2 = document.querySelector('.d2');
+    date1.innerHTML = new Date().toString();
+    date2.innerHTML = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      20,
+      0,
+      0
+      ).toString();
+  </script>
+</body>
+</html>
